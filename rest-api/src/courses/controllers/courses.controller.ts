@@ -27,7 +27,10 @@ export class CoursesController {
   @Put(':courseId')
   async updateCourse(
     @Param("courseId") courseId:string,
+    @Body("seqNo") seqNo: number,
     @Body() changes: Partial<Course>): Promise<Course> {
+
+    console.log("seqNo value " + seqNo + ", type: " + typeof seqNo);
 
     if(changes._id) {
       throw new BadRequestException("Can't update course id");
