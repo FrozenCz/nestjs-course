@@ -62,6 +62,7 @@ export class EditCourseDialogComponent {
       ...this.form.value
     };
 
+
     if (this.mode == 'update') {
       this.coursesService.updateCourse(this.course._id, changes)
         .subscribe(
